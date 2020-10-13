@@ -50,7 +50,7 @@ for name ; do
     cd "$name"
 
     [ -d patches ] &&
-    for patch in patches/* ; do
+    for patch in patches/*.diff ; do
         printf '\n%s\n\n' "===> applying ${patch#patches/}..."
         patch -l -p0 < "$patch" || exit 1
     done
